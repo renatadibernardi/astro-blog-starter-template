@@ -16,4 +16,21 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const link = defineCollection({
+	// Load Markdown files in the `src/content/link/` directory (bookmarks for the /link page).
+	loader: glob({ base: "./src/content/link", pattern: "**/*.md" }),
+	schema: z.object({
+		name: z.string(),
+		link: z.string().url(),
+		description: z.string().optional().default(""),
+		createdAt: z.string().datetime(),
+		tags: z.array(z.string()).default([]),
+		favicon: z.string().optional().default(""),
+		ogthumb: z.string().optional().default(""),
+		creator: z.string().default("admin"),
+		favorite: z.boolean().default(false),
+		bundles: z.array(z.string()).default([]),
+	}),
+});
+
+export const collections = { blog, link };

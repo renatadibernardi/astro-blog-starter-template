@@ -45,3 +45,62 @@ collections:
       - label: Conteúdo do artigo
         name: body
         widget: markdown
+
+  - name: link
+    label: Links
+    label_singular: Link
+    folder: src/content/link
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+
+    fields:
+      - label: Nome
+        name: name
+        widget: string
+
+      - label: URL
+        name: link
+        widget: string
+
+      - label: Descrição
+        name: description
+        widget: text
+        required: false
+
+      - label: Data de criação
+        name: createdAt
+        widget: datetime
+        format: "YYYY-MM-DDTHH:mm:ss.SSSZ"
+        picker_utc: true
+
+      - label: Tags
+        name: tags
+        widget: list
+        default: []
+
+      - label: Bundles
+        name: bundles
+        widget: list
+        default: []
+
+      - label: Favorito
+        name: favorite
+        widget: boolean
+        default: false
+
+      - label: Favicon (URL)
+        name: favicon
+        widget: string
+        required: false
+
+      - label: Imagem de preview (URL)
+        name: ogthumb
+        widget: string
+        required: false
+
+      - label: Criador
+        name: creator
+        widget: string
+        default: dibernardi

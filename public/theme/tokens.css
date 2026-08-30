@@ -1,0 +1,134 @@
+:root {
+  color-scheme: light;
+
+  --portal-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --portal-font-display: Georgia, "Times New Roman", serif;
+  --portal-font-serif: Georgia, "Times New Roman", serif;
+  --portal-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --portal-bg: #fbf8f3;
+  --portal-bg-subtle: #f5efe8;
+  --portal-surface: #fffdfa;
+  --portal-surface-strong: #fffdfa;
+  --portal-surface-muted: #eee4db;
+  --portal-ink: #242029;
+  --portal-ink-soft: #39343d;
+  --portal-ink-muted: #6a626d;
+  --portal-line: #e7ddd6;
+  --portal-line-strong: #d5c8bf;
+
+  --portal-accent: #765aa6;
+  --portal-accent-strong: #4f3c73;
+  --portal-accent-soft: rgba(118, 90, 166, 0.12);
+  --portal-accent-glow: rgba(118, 90, 166, 0.18);
+  --portal-accent-muted: #927eb8;
+  --portal-secondary: #5b6f72;
+  --portal-rose: #b87964;
+  --portal-rose-strong: #8f5e4b;
+  --portal-rose-soft: #f2e4df;
+  --portal-warning: #8b6a39;
+  --portal-danger: #b65443;
+  --portal-success: #58735d;
+  --portal-pomodoro-timer-text: #f4eee8;
+
+  --background: var(--portal-bg);
+  --foreground: var(--portal-ink);
+  --card: var(--portal-surface);
+  --card-foreground: var(--portal-ink);
+  --primary: var(--portal-accent);
+  --primary-foreground: #ffffff;
+  --muted: var(--portal-surface-muted);
+  --muted-foreground: var(--portal-ink-muted);
+  --border: var(--portal-line);
+  --input: var(--portal-surface-muted);
+
+  --portal-radius-sm: 4px;
+  --portal-radius-md: 6px;
+  --portal-radius-lg: 8px;
+  --portal-radius-xl: 8px;
+  --portal-radius-2xl: 8px;
+  --portal-radius-pill: 999px;
+
+  --portal-shadow-soft: 0 12px 28px rgba(61, 47, 71, 0.08);
+  --portal-shadow: 0 22px 54px rgba(61, 47, 71, 0.12);
+  --portal-shadow-float: 0 28px 72px rgba(61, 47, 71, 0.16);
+
+  --portal-container: 1180px;
+  --portal-sidebar-width: 310px;
+  --portal-transition: 180ms ease;
+
+  --bg: var(--portal-bg);
+  --bg-elevated: rgba(255, 255, 255, 0.76);
+  --bg-panel: rgba(255, 251, 246, 0.94);
+  --bg-soft: var(--portal-surface-muted);
+  --ink: var(--portal-ink);
+  --ink-soft: var(--portal-ink-soft);
+  --line: var(--portal-line);
+  --line-strong: var(--portal-line-strong);
+  --shadow: var(--portal-shadow);
+  --shadow-soft: var(--portal-shadow-soft);
+  --radius-xl: var(--portal-radius-2xl);
+  --radius-lg: var(--portal-radius-xl);
+  --radius-md: var(--portal-radius-lg);
+  --radius-sm: var(--portal-radius-md);
+  --accent: var(--portal-accent);
+  --accent-strong: var(--portal-accent-strong);
+  --accent-soft: var(--portal-accent-soft);
+  --accent-glow: var(--portal-accent-glow);
+  --danger: var(--portal-danger);
+  --danger-soft: rgba(182, 84, 67, 0.12);
+  --success: var(--portal-success);
+  --warning: var(--portal-warning);
+  --sidebar-width: var(--portal-sidebar-width);
+  --font-display: var(--portal-font-display);
+  --font-body: var(--portal-font-sans);
+  --portal-button-text: var(--portal-ink);
+  --portal-button-text-muted: var(--portal-ink-soft);
+}
+
+.text-white,
+.text-white\/85,
+.text-white\/80,
+.text-white\/70,
+.text-white\/65,
+.text-white\/60 {
+  color: var(--portal-button-text) !important;
+}
+
+.text-white\/50,
+.text-white\/40,
+.text-white\/30 {
+  color: var(--portal-button-text-muted) !important;
+}
+
+:root[data-portal-theme="dark"],
+html.dark,
+html.dark-linux {
+  color-scheme: dark;
+
+  --portal-bg: #1b1623;
+  --portal-bg-subtle: #241d30;
+  --portal-surface: #2a2237;
+  --portal-surface-strong: #342a44;
+  --portal-surface-muted: #201a2a;
+  --portal-ink: #f4eee8;
+  --portal-ink-soft: #ded3e6;
+  --portal-ink-muted: #b4a6bc;
+  --portal-line: rgba(214, 198, 224, 0.14);
+  --portal-line-strong: rgba(214, 198, 224, 0.34);
+  --portal-accent: #b6a3d3;
+  --portal-accent-strong: #d6c5ee;
+  --portal-accent-soft: rgba(182, 163, 211, 0.12);
+  --portal-accent-glow: rgba(182, 163, 211, 0.18);
+  --portal-rose: #d7a38f;
+  --portal-rose-strong: #e5b9a8;
+  --portal-pomodoro-timer-text: #f4eee8;
+  --primary-foreground: #17111f;
+  --portal-shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.24);
+  --portal-shadow: 0 28px 64px rgba(0, 0, 0, 0.3);
+  --portal-shadow-float: 0 36px 80px rgba(0, 0, 0, 0.38);
+}
+
+html.light-linux {
+  color-scheme: light;
+}

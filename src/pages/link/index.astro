@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import LinkLayout from '../../layouts/LinkLayout.astro';
+import App from '../../components/link/App';
+import type { Bookmark } from '../../data/link-types';
+
+const entries = await getCollection('link');
+
+const bookmarks: Bookmark[] = entries
+  .map((entry) => ({
+    id: entry.id,
+    name: entry.data.name,
+    link: entry.data.link,
+    description: entry.data.description,
+    createdAt: entry.data.createdAt,
+    tags: entry.data.tags,
+    favicon: entry.data.favicon,
+    ogthumb: entry.data.ogthumb,
+    creator: entry.data.creator,
+    favorite: entry.data.favorite,
+    bundles: entry.data.bundles,
+  }))
+  .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
+const tagCounts = new Map<string, number>();
+const bundleSet = new Set<string>();
+
+for (const bookmark of bookmarks) {
+  for (const tag of bookmark.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  }
+
+  for (const bundle of bookmark.bundles ?? []) {
+    bundleSet.add(bundle);
+  }
+}
+
+const data = {
+  bookmarks,
+  tags: [...tagCounts.entries()]
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => a.tag.localeCompare(b.tag, 'pt-BR')),
+  bundles: [...bundleSet].sort((a, b) => a.localeCompare(b, 'pt-BR')),
+};
+---
+
+<LinkLayout title="Links Di Bernardi">
+  <App data={data} client:load />
+</LinkLayout>
