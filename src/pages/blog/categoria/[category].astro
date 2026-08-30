@@ -24,7 +24,10 @@ const posts = (await getCollection('blog'))
 		<BaseHead title={`${meta.label} — Blog`} description={`Artigos na categoria ${meta.label}.`} />
 		<style>
 			main {
-				width: 960px;
+				width: 1120px;
+				max-width: calc(100% - 48px);
+				margin: auto;
+				padding: 3em 0;
 			}
 			.eyebrow {
 				margin: 0 0 0.25rem 0;

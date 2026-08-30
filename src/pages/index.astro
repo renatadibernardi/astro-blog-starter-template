@@ -81,36 +81,14 @@ const faqs = [
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1>Fé, raízes hebraicas e as perguntas que valem a pena investigar.</h1>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+				Sou estudante de Teologia e este espaço é o registo do meu processo de
+				aprendizagem: as tribos de Israel, o calendário hebraico, os céus e as
+				constelações, e tudo o que aparece nas Escrituras — e também fora
+				delas. A proposta é simples: voltar às fontes, separar o que é texto
+				bíblico do que é tradição, e deixar as perguntas em aberto quando
+				ainda não têm resposta.
 			</p>
 
 			<section class="site-service-band" aria-labelledby="types-title">
@@ -217,6 +195,22 @@ const faqs = [
 		</script>
 
 		<style>
+			main {
+				width: 100vw;
+				max-width: none;
+				box-sizing: border-box;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				padding-left: max(24px, calc((100vw - 1120px) / 2));
+				padding-right: max(24px, calc((100vw - 1120px) / 2));
+			}
+			main > h1 {
+				max-width: 760px;
+			}
+			main > p {
+				max-width: 640px;
+			}
 			.site-service-band {
 				position: relative;
 				left: 50%;
@@ -227,7 +221,7 @@ const faqs = [
 				grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.58fr);
 				align-items: center;
 				gap: clamp(28px, 6vw, 72px);
-				padding: clamp(42px, 6vw, 68px) max(24px, calc((100vw - 1120px) / 2));
+				padding: clamp(44px, 7vw, 72px) max(24px, calc((100vw - 1120px) / 2));
 				border-top: 1px solid rgb(var(--gray-light));
 				border-bottom: 1px solid rgb(var(--gray-light));
 			}
@@ -317,7 +311,7 @@ const faqs = [
 			}
 			@media (max-width: 860px) {
 				.site-service-band {
-					grid-template-columns: 1fr;
+					grid-template-columns: minmax(0, 1fr);
 				}
 			}
 
@@ -331,7 +325,7 @@ const faqs = [
 				grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
 				align-items: start;
 				gap: clamp(28px, 6vw, 72px);
-				padding: clamp(50px, 8vw, 84px) max(24px, calc((100vw - 1120px) / 2));
+				padding: clamp(44px, 7vw, 72px) max(24px, calc((100vw - 1120px) / 2));
 				border-top: 1px solid rgb(var(--gray-light));
 			}
 			.site-faq-heading {
@@ -446,7 +440,7 @@ const faqs = [
 			}
 			@media (max-width: 860px) {
 				.site-faq-section {
-					grid-template-columns: 1fr;
+					grid-template-columns: minmax(0, 1fr);
 				}
 				.site-faq-heading {
 					position: static;
@@ -463,10 +457,13 @@ const faqs = [
 			}
 
 			.site-service-cta {
-				width: 100%;
+				position: relative;
+				left: 50%;
+				width: min(1120px, calc(100vw - 48px));
 				box-sizing: border-box;
+				transform: translateX(-50%);
 				margin: clamp(14px, 3vw, 28px) 0 clamp(30px, 5vw, 48px);
-				padding: clamp(34px, 6vw, 58px);
+				padding: clamp(44px, 7vw, 72px) clamp(34px, 6vw, 58px);
 				color: #fff;
 				background:
 					linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px) 0 0 / 34px 34px,
