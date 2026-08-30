@@ -10,7 +10,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://example.com",
-	integrations: [mdx(), sitemap(), solidJs(), tailwind()],
+	integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
 	adapter: cloudflare({
 		platformProxy: {
 			enabled: true,

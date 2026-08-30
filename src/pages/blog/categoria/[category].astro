@@ -1,0 +1,65 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import BlogList from '../../../components/BlogList.astro';
+import { CATEGORIES } from '../../../consts';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	return Object.keys(CATEGORIES).map((category) => ({ params: { category } }));
+}
+
+const { category } = Astro.params as { category: string };
+const meta = CATEGORIES[category];
+
+const posts = (await getCollection('blog'))
+	.filter((post) => post.data.category === category)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<BaseHead title={`${meta.label} — Blog`} description={`Artigos na categoria ${meta.label}.`} />
+		<style>
+			main {
+				width: 960px;
+			}
+			.eyebrow {
+				margin: 0 0 0.25rem 0;
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-size: 0.75rem;
+				font-weight: 700;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: rgb(var(--gray));
+			}
+			h1 {
+				margin-bottom: 1.5rem;
+			}
+			.back-link {
+				display: inline-block;
+				margin-bottom: 2rem;
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-size: 0.8125rem;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section>
+				<p class="eyebrow">Categoria</p>
+				<h1>{meta.label}</h1>
+				<a class="back-link" href="/blog/">&larr; Ver todos os artigos</a>
+				{posts.length > 0 ? (
+					<BlogList posts={posts} />
+				) : (
+					<p>Ainda não há artigos nesta categoria.</p>
+				)}
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

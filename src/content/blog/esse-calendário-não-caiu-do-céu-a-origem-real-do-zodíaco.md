@@ -4,9 +4,9 @@ description: De onde vem a ligação entre os meses do calendário hebraico e os
   signos do zodíaco? A origem é babilônica — e a Bíblia já tinha uma resposta
   honesta pra isso.
 pubDate: 2026-08-30T18:21:00Z
-heroImage: https://commons.wikimedia.org/wiki/File:Beit_Alfa_Synagogue_Mosaic.jpg
+heroImage: /images/uploads/capa-babilonica.webp
+category: sinal-x-identidade
 ---
-# Esse calendário não caiu do céu
 
 Você já deve ter visto, nos últimos posts da série "Sinal x Identidade", que o calendário hebraico liga cada mês a uma das 12 tribos de Israel, e que isso conversa diretamente com os 12 signos do zodíaco que a cultura do horóscopo já te apresentou.
 

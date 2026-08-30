@@ -5,9 +5,8 @@ description: "Quatro verdades bíblicas pra lembrar quando a insegurança aparec
   refletir a Sua luz."
 pubDate: 2026-08-30T18:07:00Z
 heroImage: /images/uploads/capa-provisoria.webp
+category: identidade-em-deus
 ---
-
-# Sua identidade não começa no que você faz
 
 Quem sou eu quando não consigo corresponder às expectativas? Quem sou eu quando falho, sou rejeitada ou meus planos não dão certo?
 

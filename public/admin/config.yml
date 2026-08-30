@@ -31,6 +31,14 @@ collections:
         name: description
         widget: text
 
+      - label: Categoria
+        name: category
+        widget: select
+        required: false
+        options:
+          - { label: "Identidade em Deus", value: "identidade-em-deus" }
+          - { label: "Sinal x Identidade", value: "sinal-x-identidade" }
+
       - label: Data de publicação
         name: pubDate
         widget: datetime
