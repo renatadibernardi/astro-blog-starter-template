@@ -34,8 +34,8 @@ collections:
       - label: Data de publicação
         name: pubDate
         widget: datetime
-        date_format: "DD/MM/YYYY"
-        time_format: "HH:mm"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+        picker_utc: true
 
       - label: Imagem principal
         name: heroImage
