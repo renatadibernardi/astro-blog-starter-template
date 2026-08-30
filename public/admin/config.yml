@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: renatadibernardi/astro-blog-starter-template
+  branch: main
+  base_url: https://decap-auth.dibernardi.workers.dev
+  auth_endpoint: /auth
+
+locale: pt
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: blog
+    label: Artigos
+    label_singular: Artigo
+    folder: src/content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+
+    fields:
+      - label: Título do artigo
+        name: title
+        widget: string
+
+      - label: Descrição
+        name: description
+        widget: text
+
+      - label: Data de publicação
+        name: pubDate
+        widget: datetime
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+
+      - label: Imagem principal
+        name: heroImage
+        widget: image
+        required: false
+
+      - label: Conteúdo do artigo
+        name: body
+        widget: markdown
