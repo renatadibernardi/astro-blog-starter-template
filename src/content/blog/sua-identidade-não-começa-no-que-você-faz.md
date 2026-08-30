@@ -3,9 +3,10 @@ title: Sua identidade não começa no que você faz
 description: "Quatro verdades bíblicas pra lembrar quando a insegurança aparece:
   você é nova criação em Cristo, obra de Deus, livre de condenação e chamada pra
   refletir a Sua luz."
-pubDate: 2026-08-30T18:07:00Z
-heroImage: /images/uploads/capa-provisoria.webp
 category: identidade-em-deus
+pubDate: 2026-08-30T18:07:00.000Z
+showDate: true
+heroImage: /images/uploads/capa-provisoria.webp
 ---
 
 Quem sou eu quando não consigo corresponder às expectativas? Quem sou eu quando falho, sou rejeitada ou meus planos não dão certo?
