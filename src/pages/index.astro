@@ -32,6 +32,45 @@ const studyThemes = [
 			'Como funcionam os meses do calendário hebraico? Quais festas aparecem na Bíblia e o que elas representam? Este espaço reúne estudos sobre meses, festas, ciclos e o contexto histórico de Israel.',
 	},
 ];
+
+const faqs = [
+	{
+		question: 'Este é um site de astrologia?',
+		answer: [
+			'Não. Alguns estudos podem passar por constelações, zodíaco, calendários ou antigas associações simbólicas, mas o objetivo é investigar a origem dessas ideias e compreender a relação — ou ausência de relação — delas com o texto bíblico.',
+		],
+	},
+	{
+		question: 'Vais estudar as 12 Tribos de Israel?',
+		answer: [
+			'Sim. As 12 Tribos são um dos temas que quero explorar com mais profundidade, começando pela narrativa bíblica e avançando para história, símbolos e tradições relacionadas.',
+		],
+	},
+	{
+		question: 'E as associações entre tribos, meses e signos?',
+		answer: [
+			'Também podem aparecer como objeto de estudo. Quando isso acontecer, quero deixar claro o que está na Bíblia, o que vem da tradição e o que pertence a interpretações posteriores.',
+		],
+	},
+	{
+		question: 'Todos os textos representam uma conclusão definitiva?',
+		answer: [
+			'Não. Sou estudante de Teologia e este espaço acompanha o meu processo de aprendizagem. Alguns textos podem registrar uma conclusão; outros podem terminar com novas perguntas.',
+		],
+	},
+	{
+		question: 'Por que estudar esses temas?',
+		answer: [
+			'Porque aprender também significa fazer perguntas, voltar às fontes e reconhecer quando ainda existe algo para compreender melhor.',
+		],
+	},
+	{
+		question: 'O que significa separar texto, tradição e interpretação?',
+		answer: [
+			'Significa não apresentar como texto bíblico uma associação que nasceu posteriormente. Sempre que possível, quero identificar a origem de cada ideia e o contexto em que ela aparece.',
+		],
+	},
+];
 ---
 
 <!doctype html>
@@ -112,6 +151,48 @@ const studyThemes = [
 						))
 					}
 				</ul>
+			</section>
+
+			<section class="site-faq-section" aria-labelledby="site-faq-title">
+				<div class="site-faq-heading">
+					<p class="eyebrow">Perguntas frequentes</p>
+					<h2 id="site-faq-title">
+						Algumas coisas importantes antes de continuar
+					</h2>
+					<p>
+						Este é um espaço de estudo e aprendizado. Alguns assuntos possuem
+						diferentes interpretações e quero deixar essas diferenças visíveis ao
+						longo do caminho.
+					</p>
+				</div>
+
+				<div class="site-faq-list">
+					{
+						faqs.map((faq, index) => (
+							<details open={index === 0}>
+								<summary>{faq.question}</summary>
+								<div class="site-faq-answer">
+									{faq.answer.map((paragraph) => (
+										<p>{paragraph}</p>
+									))}
+								</div>
+							</details>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="site-service-cta" aria-labelledby="site-cta-title">
+				<p class="eyebrow">Continuar estudando</p>
+				<h2 id="site-cta-title">Qual pergunta vamos investigar agora?</h2>
+				<p>
+					Este espaço vai crescer conforme os meus estudos avançarem. Bíblia,
+					Israel, tribos, símbolos, céus e aquelas perguntas que fazem abrir mais
+					um livro e continuar pesquisando.
+				</p>
+				<a class="button primary" href="/blog">
+					Explorar os estudos
+				</a>
 			</section>
 		</main>
 		<Footer />
@@ -238,6 +319,201 @@ const studyThemes = [
 				.site-service-band {
 					grid-template-columns: 1fr;
 				}
+			}
+
+			.site-faq-section {
+				position: relative;
+				left: 50%;
+				width: 100vw;
+				box-sizing: border-box;
+				transform: translateX(-50%);
+				display: grid;
+				grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+				align-items: start;
+				gap: clamp(28px, 6vw, 72px);
+				padding: clamp(50px, 8vw, 84px) max(24px, calc((100vw - 1120px) / 2));
+				border-top: 1px solid rgb(var(--gray-light));
+			}
+			.site-faq-heading {
+				position: sticky;
+				top: 88px;
+			}
+			.site-faq-heading .eyebrow {
+				margin: 0;
+				color: var(--accent-dark);
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-size: 0.82rem;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+			}
+			.site-faq-heading h2 {
+				max-width: 520px;
+				margin-top: 12px;
+			}
+			.site-faq-heading p:not(.eyebrow) {
+				max-width: 500px;
+				margin: 18px 0 0;
+				color: rgb(var(--gray));
+			}
+			.site-faq-list {
+				overflow: hidden;
+				background:
+					radial-gradient(circle at 92% 8%, rgba(118, 90, 166, 0.1), transparent 28%),
+					var(--portal-surface, #fffdfa);
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 8px;
+				box-shadow: 0 18px 54px rgba(61, 47, 71, 0.08);
+			}
+			.site-faq-list details {
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.site-faq-list details:last-child {
+				border-bottom: 0;
+			}
+			.site-faq-list summary {
+				position: relative;
+				display: grid;
+				grid-template-columns: 24px minmax(0, 1fr);
+				gap: 14px;
+				align-items: center;
+				min-height: 62px;
+				padding: 17px 22px;
+				color: rgb(var(--black));
+				cursor: pointer;
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-weight: 700;
+				list-style: none;
+			}
+			.site-faq-list summary::-webkit-details-marker {
+				display: none;
+			}
+			.site-faq-list summary::before {
+				display: grid;
+				width: 24px;
+				height: 24px;
+				place-items: center;
+				color: var(--accent-dark);
+				content: '+';
+				background: var(--portal-bg-subtle, #f5efe8);
+				border: 1px solid rgba(118, 90, 166, 0.18);
+				border-radius: 50%;
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-size: 1rem;
+				line-height: 1;
+			}
+			.site-faq-list details[open] summary {
+				color: var(--accent-dark);
+				background: rgba(245, 239, 232, 0.58);
+			}
+			.site-faq-list details[open] summary::before {
+				color: #fff;
+				content: '-';
+				background: var(--accent-dark);
+				border-color: var(--accent-dark);
+			}
+			.site-faq-answer {
+				padding: 0 22px 22px 60px;
+				color: rgb(var(--gray));
+			}
+			.site-faq-answer p {
+				margin: 0;
+			}
+			.site-faq-answer p + p {
+				margin-top: 12px;
+			}
+			.site-faq-answer ul {
+				display: grid;
+				gap: 8px;
+				margin: 16px 0 0;
+				padding: 0;
+				list-style: none;
+			}
+			.site-faq-answer li {
+				position: relative;
+				padding-left: 18px;
+			}
+			.site-faq-answer li::before {
+				position: absolute;
+				top: 0.72em;
+				left: 0;
+				width: 7px;
+				height: 7px;
+				content: '';
+				background: var(--portal-rose, #b87964);
+				border-radius: 50%;
+				transform: translateY(-50%);
+			}
+			@media (max-width: 860px) {
+				.site-faq-section {
+					grid-template-columns: 1fr;
+				}
+				.site-faq-heading {
+					position: static;
+				}
+			}
+			@media (max-width: 560px) {
+				.site-faq-list summary {
+					min-height: 58px;
+					padding: 15px 16px;
+				}
+				.site-faq-answer {
+					padding: 0 16px 18px 54px;
+				}
+			}
+
+			.site-service-cta {
+				width: 100%;
+				box-sizing: border-box;
+				margin: clamp(14px, 3vw, 28px) 0 clamp(30px, 5vw, 48px);
+				padding: clamp(34px, 6vw, 58px);
+				color: #fff;
+				background:
+					linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px) 0 0 / 34px 34px,
+					linear-gradient(135deg, #3c3443 0%, #54456b 48%, #8a655f 100%);
+				border-radius: 8px;
+			}
+			.site-service-cta .eyebrow {
+				margin: 0;
+				color: #fff;
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-size: 0.82rem;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+			}
+			.site-service-cta h2 {
+				color: #fff;
+			}
+			.site-service-cta p:not(.eyebrow) {
+				max-width: 690px;
+				margin: 16px 0 24px;
+				color: rgba(255, 255, 255, 0.84);
+			}
+			.site-service-cta .button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 40px;
+				padding: 10px 17px;
+				border: 1px solid transparent;
+				border-radius: 8px;
+				font-family: var(--portal-font-sans, "Inter", sans-serif);
+				font-weight: 700;
+				text-decoration: none;
+				transition:
+					transform 0.2s ease,
+					background 0.2s ease,
+					box-shadow 0.2s ease;
+			}
+			.site-service-cta .button:hover,
+			.site-service-cta .button:focus-visible {
+				transform: translateY(-2px);
+				box-shadow: 0 12px 26px rgba(61, 47, 71, 0.24);
+			}
+			.site-service-cta .button.primary {
+				color: var(--accent-dark);
+				background: #fff;
 			}
 		</style>
 	</body>
