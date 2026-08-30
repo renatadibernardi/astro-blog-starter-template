@@ -45,6 +45,12 @@ collections:
         format: "YYYY-MM-DDTHH:mm:ssZ"
         picker_utc: true
 
+      - label: Mostrar data no site
+        name: showDate
+        widget: boolean
+        default: true
+        hint: "Desliga para esconder a data no artigo e na listagem do blog (a data continua a existir por trás, só não aparece)."
+
       - label: Imagem principal
         name: heroImage
         widget: image

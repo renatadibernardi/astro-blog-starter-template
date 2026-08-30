@@ -12,6 +12,8 @@ const blog = defineCollection({
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
+		// Controla só a exibição no site — a data continua a existir e a ordenar os posts.
+		showDate: z.boolean().optional().default(true),
 		heroImage: z.string().optional(),
 		category: z.enum(["identidade-em-deus", "sinal-x-identidade"]).optional(),
 	}),
